@@ -55,7 +55,6 @@ export default defineComponent({
     speak("victory");
     let total = store.state.copy + store.state.lateral + store.state.vertical;
     const csvData = `${store.state.studentId},${total}`;
-    console.log(store.state.studentId);
     if (store.state.isChallenge == false) {
       axios.post('http://viscat.shop:5002/api/auth/score', {studentId: store.state.studentId, testScore: total})
           .then(response => {
